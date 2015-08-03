@@ -1,10 +1,10 @@
 #!/bin/bash
-echo -n "Установленны ли пакеты subversion git g++ libncurses5-dev zlib1g-dev gawk figlet? (Y/N/) "
+echo -n "Are the packages installed subversion git g++ libncurses5-dev zlib1g-dev gawk figlet? (Y/N/) "
 read item
 case "$item" in
-    Y|y) echo "Продолжаем"
+    Y|y) echo "continue"
         ;;
-    N|n) echo "Начинаем установку"
+    N|n) echo "start the installation"
       sudo apt-get install subversion git g++ libncurses5-dev zlib1g-dev gawk figlet make
         ;;
     *) echo "Ничего не ввели. Ожидание ввода"
