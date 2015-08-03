@@ -1,5 +1,5 @@
 #!/bin/bash
-echo -n "Are the packages installedmesa-utils (Y/N/) "
+echo -n "Are the packages installed mesa-utils (Y/N/) "
 read item
 case "$item" in
     Y|y) echo "continue"
