@@ -1,7 +1,6 @@
 #!/bin/bash
 echo Let me download sources and libraries
 sh core/cpu_setup_bench.sh
-echo Начинаем тестировать
 START=$(date +%s)
 cd pbench_wrt
 figlet CPU
@@ -23,7 +22,7 @@ case "$item" in
     j8|8) echo "Ввели «j8/8» start a compilation of eight streams"
       make tools/install -j8 V=-1
 	    ;;
-    *) echo "Ничего не ввели. Ожидание ввода"
+    *) echo "Nothing entered. Waiting for input"
             ;;
 esac
 END=$(date +%s)

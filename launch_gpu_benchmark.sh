@@ -19,6 +19,6 @@ case "$item" in
     intel) echo "Writed «intel» testing"
       glxgears
         ;;
-    *) echo "Ничего не ввели. Ожидание ввода"
+    *) echo "Nothing entered. Waiting for input"
         ;;
 esac

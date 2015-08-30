@@ -19,6 +19,6 @@ case "$item" in
     4) echo "Ввели «4/HDD» launching R/W benchmark"
      sync; dd if=/dev/zero of=tempfile bs=1M count=1024; sync
         ;;
-    *) echo "Ничего не ввели. Ожидание ввода"
+    *) echo "Nothing entered. Waiting for input"
         ;;
 esac
