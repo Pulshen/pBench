@@ -6,9 +6,9 @@ case "$item" in
     eng|1) echo "Selected English version"
       sh english_setup.sh
         ;;
-    rus|2) echo "Выбран русский язык для установки"
+    rus|2) echo "Р’С‹Р±СЂР°РЅ СЂСѓСЃСЃРєРёР№ СЏР·С‹Рє РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё"
       sh russian_setup.sh
         ;;
-    *) echo "Ничего не ввели. Ожидание ввода"
+    *) echo "РќРёС‡РµРіРѕ РЅРµ РІРІРµР»Рё. РћР¶РёРґР°РЅРёРµ РІРІРѕРґР°"
             ;;
 esac
