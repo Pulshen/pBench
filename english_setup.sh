@@ -15,4 +15,5 @@ cd PulshenWRT_ChaosChamer
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 make prereq
+make menuconfig
 figlet Done!
