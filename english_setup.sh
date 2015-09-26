@@ -4,7 +4,7 @@ read item
 case "$item" in
     Y|y) echo "Continuing preparation"
         ;;
-    N|n) echo "start the installation"
+    N|n) echo "Start the installation"
       sudo apt-get install subversion git g++ libncurses5-dev zlib1g-dev gawk figlet make libssl-dev
         ;;
     *) echo "Ничего не ввели. Ожидание ввода"
