@@ -1,6 +1,6 @@
 #!/bin/bash
 echo Welcome to benchmark!
-cd ../PulshenWRT_ChaosChamer
+cd ../PulshenWRT
 figlet CPU bench
 START=$(date +%s)
 echo -n "How many of your processor threads? (1/2/4/6/8/16) "

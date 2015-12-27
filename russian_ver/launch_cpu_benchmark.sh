@@ -1,6 +1,6 @@
 #!/bin/bash
 echo Добро пожаловать в бенчмарк!
-cd ../PulshenWRT_ChaosChamer
+cd ../PulshenWRT
 figlet CPU bench
 START=$(date +%s)
 echo -n "Сколько у вас потоков процессора? (1/2/4/6/8/16) "

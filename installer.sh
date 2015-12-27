@@ -4,10 +4,10 @@ echo -n "Select a language for the installation and the installation program (1e
 read item
 case "$item" in
     eng|1) echo "Selected English version"
-      sh english_setup.sh
+       ./bin/english_setup.sh
         ;;
     rus|2) echo "Выбран русский язык для установки"
-      sh russian_setup.sh
+       ./bin/russian_setup.sh
         ;;
     *) echo "Ничего не ввели. Ожидание ввода"
             ;;

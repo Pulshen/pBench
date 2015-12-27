@@ -9,11 +9,7 @@ case "$item" in
         ;;
     *) echo "Ничего не ввели. Ожидание ввода"
         ;; esac
-figlet Getting sources
-git clone https://github.com/Pulshen/PulshenWRT_ChaosChamer.git
-cd PulshenWRT_ChaosChamer
-./scripts/feeds update -a
-./scripts/feeds install -a
+cd PulshenWRT
 make prereq
 make menuconfig
 figlet Done!
