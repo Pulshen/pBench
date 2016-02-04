@@ -13,3 +13,6 @@ After completing all the installation steps pseudographic interface will open wh
 
 
 Once you are in the directory to the desired language, type `sh launcher.sh`
+
+
+ 
