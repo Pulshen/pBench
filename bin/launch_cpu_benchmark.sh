@@ -5,6 +5,7 @@ figlet CPU bench
 echo ===================================================
 echo Choose how many your processor have
 echo 1/2/4/6/8 or 16
+echo Use autodetection(0)
 echo ====================================================
 START=$(date +%s)
 echo -n "Choose an action"
@@ -28,7 +29,10 @@ case "$item" in
     j16|16) echo "Writed «j16/16» start a compilation of sixteen streams"
       make tools/install -j17 V=-1
 		;;
-	*) echo "Nothing entered. Waiting for input"
+    0) echo "Detecting all theards"
+      make ${MAKEFLAGS="-j$(nproc)"} V=-1
+                ;;
+    *) echo "Nothing entered. Waiting for input"
             ;;
 esac
 END=$(date +%s)
