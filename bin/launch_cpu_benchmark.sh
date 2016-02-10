@@ -5,7 +5,7 @@ figlet CPU bench
 echo ===================================================
 echo Choose how many your processor have
 echo 1/2/4/6/8 or 16
-echo Use autodetection(0)
+echo Use autodetection 0
 echo ====================================================
 START=$(date +%s)
 echo -n "Choose an action"
@@ -36,7 +36,7 @@ case "$item" in
             ;;
 esac
 END=$(date +%s)
-DIFF=$(( ( $END - $START)/5*2 ))
+DIFF=$(( ( $END - $START)/5 *2 ))
 cd ..
 touch result.log
 echo "Your processor scored $DIFF points"
