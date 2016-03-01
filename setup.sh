@@ -14,8 +14,13 @@ case "$item" in
     *) echo "Ничего не ввели. Ожидание ввода"
             ;;
 esac
-git clone https://github.com/Pulshen/PulshenWRT_CC.git
-cd PulshenWRT*
-./scripts/feeds update -a && ./scripts/feeds install -a
-make prereq && make menuconfig
+mkdir PulshenWRT_build
+git clone git://git.openwrt.org/15.05/openwrt.git PulshenWRT_build
+git clone git@github.com:Sudokamikaze/PulshenWRT.git
+cp PulshenWRT/configs_default/config_cc PulshenWRT_build/.config
+rm -rf PulshenWRT
+cd PulshenWRT_build
+./scripts/feeds update -a
+./scripts/feeds install -a
+make prereq
 echo Done!
