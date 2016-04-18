@@ -1,10 +1,10 @@
 #!/bin/bash
 figlet Pulshens Benchmark
 echo ===========Main Menu===========
-echo CPU - CPU benchmark
-echo HDD - Read/Write test
+echo 1 CPU - CPU benchmark
+echo 2 HDD - Read/Write test
 echo ===============================
-echo -n "What do u want to test, write numbers (1CPU/2HDD)"
+echo -n "Choose an action: "
 read item
 case "$item" in
     1) echo "Writed «1/cpu», launching cpu benchmark"
