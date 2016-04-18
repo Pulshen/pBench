@@ -1,8 +1,9 @@
 #!/bin/bash
-echo Welcome to installer of this benchmark!
+echo ======================
 echo 1 ArchLinux
-echo 2 Ubuntu
-echo -n "What distro you using(1/2)"
+echo 2 Debian based distro
+echo =======================
+echo -n "Choose an action: "
 read item
 case "$item" in
     eng|1) echo "Stating pacman..."
