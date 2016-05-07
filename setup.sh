@@ -1,18 +1,18 @@
 #!/bin/bash
 echo ======================
-echo 1 ArchLinux
-echo 2 Debian based distro
+echo 1 "ArchLinux(PACMAN)"
+echo 2 "Debian based(APT)"
 echo =======================
 echo -n "Choose an action: "
 read item
 case "$item" in
-    eng|1) echo "Stating pacman..."
+    1) echo "Preparing to install utils"
        sudo pacman -S --needed subversion asciidoc bash bc binutils bzip2 fastjar flex git gcc util-linux gawk intltool zlib make cdrkit ncurses openssl patch perl-extutils-makemaker rsync sdcc unzip wget gettext libxslt boost libusb bin86 sharutils b43-fwcutter findutils
         ;;
-    rus|2) echo "Starting APT..."
+    2) echo "Starting APT..."
        sudo apt-get install subversion git g++ libncurses5-dev zlib1g-dev gawk figlet make libssl-dev
         ;;
-    *) echo "Ничего не ввели. Ожидание ввода"
+    *) echo "Error, unknown symbol"
             ;;
 esac
 mkdir PulshenWRT_build
