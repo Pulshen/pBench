@@ -1,10 +1,10 @@
 #!/bin/bash
 figlet Pulshens Benchmark
 echo ===========Main Menu================
-echo 1 CPU - CPU benchmark
-echo 2 HDD - Read/Write test
+echo "1. CPU - CPU benchmark"
+echo "2. HDD - Read/Write test"
 echo ====================================
-echo 3 "SETUP - Setup for CPU benchmark"
+echo "3. SETUP - Setup for CPU benchmark"
 echo ====================================
 echo -n "Choose an action: "
 read item
@@ -24,8 +24,8 @@ esac
 cd PulshenWRT*
 figlet CPU bench
 echo =====================================
-echo 1 Automatic detection of cpu cores
-echo "2 Manual write(numbers of cores)"
+echo "1. Automatic detection of cpu cores"
+echo "2. Manual write(numbers of cores)"
 echo =====================================
 echo -n "Choose an action: "
 read bench
