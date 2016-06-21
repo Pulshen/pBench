@@ -7,10 +7,10 @@ echo -n "Choose an action: "
 read item
 case "$item" in
     1) echo "Preparing to install utils"
-       sudo pacman -S --needed subversion asciidoc bash bc binutils bzip2 fastjar flex git gcc util-linux gawk intltool zlib make cdrkit ncurses openssl patch perl-extutils-makemaker rsync sdcc unzip wget gettext libxslt boost libusb bin86 sharutils b43-fwcutter findutils
+       sudo pacman -S --needed dmidecode subversion asciidoc bash bc binutils bzip2 fastjar flex git gcc util-linux gawk intltool zlib make cdrkit ncurses openssl patch perl-extutils-makemaker rsync sdcc unzip wget gettext libxslt boost libusb bin86 sharutils b43-fwcutter findutils
         ;;
     2) echo "Starting APT..."
-       sudo apt-get install subversion git g++ libncurses5-dev zlib1g-dev gawk figlet make libssl-dev
+       sudo apt-get install dmidecode subversion git g++ libncurses5-dev zlib1g-dev gawk figlet make libssl-dev
         ;;
     *) echo "Error, unknown symbol"
             ;;
