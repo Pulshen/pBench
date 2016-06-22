@@ -1,6 +1,7 @@
 #!/bin/bash
 figlet Pulshens Benchmark
 HTSTAT=$(sudo dmidecode -t processor)
+DATEFF=$(date +%Y-%m-%d:%H:%M:%S)
 echo ===========Main Menu================
 echo "1. CPU - CPU benchmark"
 echo "2. HDD - Read/Write test"
@@ -56,7 +57,7 @@ DIFF=$(( ( $END - $START)/5 *2 ))
 cd ..
 touch result.log
 echo "Your processor scored $DIFF points"
-echo "Your processor scored $DIFF points" >> result.log
+echo "$DATEFF Your processor scored $DIFF points" >> result.log
 notify-send --expire-time=1000 "pBench" "Your processor scored $DIFF points"
 echo Cleaning buildroot
 cd PulshenWRT*
