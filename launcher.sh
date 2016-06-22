@@ -1,6 +1,6 @@
 #!/bin/bash
 figlet Pulshens Benchmark
-HTSTAT=$(sudo dmidecode -t processor | grep HTT)
+HTSTAT=$(sudo dmidecode -t processor)
 echo ===========Main Menu================
 echo "1. CPU - CPU benchmark"
 echo "2. HDD - Read/Write test"
@@ -25,11 +25,12 @@ esac
 cd PulshenWRT*
 figlet CPU bench
 echo -n "HT Status: "
-if [ "$HTSTAT" = "HTT (Multi-threading)" ]; then
+echo "$HTSTAT" | grep -q "HTT "
+if [ $? -eq 0 ];then
   echo "HT Enabled"
 else
-  echo "HT Disabled/Unsupported"
-          fi
+  echo "HT Disabled"
+fi
 echo =====================================
 echo "1. Automatic detection of cpu cores"
 echo "2. Manual write(numbers of cores)"
