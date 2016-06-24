@@ -1,7 +1,9 @@
 #!/bin/bash
+echo "Installing libs for compiling"
 echo ======================
-echo 1 "ArchLinux(PACMAN)"
-echo 2 "Debian based(APT)"
+echo "1. ArchLinux(PACMAN)"
+echo "2. Debian based(APT)"
+echo "3. Ignore"
 echo =======================
 echo -n "Choose an action: "
 read item
@@ -11,6 +13,8 @@ case "$item" in
         ;;
     2) echo "Starting APT..."
        sudo apt-get install dmidecode subversion git g++ libncurses5-dev zlib1g-dev gawk figlet make libssl-dev
+        ;;
+    3) echo "Ignoring installing lib procedure"
         ;;
     *) echo "Error, unknown symbol"
             ;;
