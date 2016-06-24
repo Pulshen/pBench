@@ -1,5 +1,6 @@
 #!/bin/bash
 figlet Pulshens Benchmark
+echo "Sudo is needed for checking enabled HT or not."
 HTSTAT=$(sudo dmidecode -t processor)
 DATEFF=$(date +%Y-%m-%d:%H:%M:%S)
 echo ===========Main Menu================
