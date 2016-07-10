@@ -59,8 +59,8 @@ touch result.log
 echo "Your processor scored $DIFF points"
 echo "$DATEFF Your processor scored $DIFF points" >> result.log
 notify-send --expire-time=1000 "pBench" "Your processor scored $DIFF points"
+mv result.log ../
 echo Cleaning buildroot
-cd PulshenWRT*
 make dirclean
 make prereq
 echo "Complete"
