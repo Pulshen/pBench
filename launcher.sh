@@ -42,20 +42,19 @@ read bench
 case "$bench" in
   1) echo Detected $(nproc) cores, starting benchmark testing
   START=$(date +%s)
-  make ${MAKEFLAGS="-j$(nproc)"} V=-1
+  make toolchain/install ${MAKEFLAGS="-j$(nproc)"} V=-1
   ;;
   2) echo -n "How much u have cpu cores: "
   read cores
   START=$(date +%s)
   echo "Compilation stated on $cores cores"
-  make ${MAKEFLAGS="-j$cores"} V=-1
+  make toolchain/install ${MAKEFLAGS="-j$cores"} V=-1
   ;;
   *) echo "Unknown symbol"
   ;;
 esac
 END=$(date +%s)
 DIFF=$(( ( $END - $START)/5 *2 ))
-cd ..
 touch result.log
 echo "Your processor scored $DIFF points"
 echo "$DATEFF Your processor scored $DIFF points" >> result.log
