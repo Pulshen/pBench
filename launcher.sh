@@ -42,13 +42,13 @@ read bench
 case "$bench" in
   1) echo Detected $(nproc) cores, starting benchmark testing
   START=$(date +%s)
-  make toolchain/install ${MAKEFLAGS="-j$(nproc)"} V=-1
+  make tools/install ${MAKEFLAGS="-j$(nproc)"} V=-1
   ;;
   2) echo -n "How much u have cpu cores: "
   read cores
   START=$(date +%s)
   echo "Compilation stated on $cores cores"
-  make toolchain/install ${MAKEFLAGS="-j$cores"} V=-1
+  make tools/install ${MAKEFLAGS="-j$cores"} V=-1
   ;;
   *) echo "Unknown symbol"
   ;;
