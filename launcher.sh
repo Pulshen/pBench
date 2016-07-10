@@ -62,4 +62,5 @@ notify-send --expire-time=1000 "pBench" "Your processor scored $DIFF points"
 echo Cleaning buildroot
 cd PulshenWRT*
 make dirclean
-echo complete
+make prereq
+echo "Complete"
