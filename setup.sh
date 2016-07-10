@@ -20,12 +20,11 @@ case "$item" in
             ;;
 esac
 mkdir PulshenWRT_build
-git clone git://git.openwrt.org/15.05/openwrt.git PulshenWRT_build
+git clone git@github.com:lede-project/source.git PulshenWRT_build
 git clone git@github.com:Sudokamikaze/PulshenWRT.git
-cp PulshenWRT/configs_default/config_cc PulshenWRT_build/.config
+cp PulshenWRT/configs_default/config_lede_trunk PulshenWRT_build/.config
 rm -rf PulshenWRT
 cd PulshenWRT_build
-./scripts/feeds update -a
-./scripts/feeds install -a
-make prereq
+./scripts/feeds update -a && ./scripts/feeds install -a
+make menuconfig
 echo Done!
