@@ -1,5 +1,5 @@
 #!/bin/bash
-figlet Pulshens Benchmark
+figlet Sudokamikaze Benchmark
 echo "Sudo is needed for checking enabled HT or not."
 HTSTAT=$(sudo dmidecode -t processor)
 DATEFF=$(date +%Y-%m-%d:%H:%M:%S)
@@ -11,27 +11,24 @@ echo "3. SETUP - Setup for CPU benchmark"
 echo ====================================
 echo -n "Choose an action: "
 read item
-case "$item" in
-    1) echo "Writed «1/cpu», launching cpu benchmark"
-
-        ;;
-    2) echo "Writed «2/HDD» launching R/W benchmark"
-     sync; dd if=/dev/zero of=tempfile bs=1M count=1024; sync && rm tempfile && exit
-        ;;
-    3) echo launching setup interface...
-    ./setup.sh
-        ;;
-    *) echo "Nothing entered. Waiting for input"
-        ;;
-esac
+if [ $item == "1" ]; then
+echo " "
+elif [ $item == "2" ]; then
+  sync; dd if=/dev/zero of=tempfile bs=1M count=1024; sync && rm tempfile && exit
+elif [ $item == "3" ]; then
+./setup.sh
+else
+  echo "Error"
+  exit 1
+fi
 cd PulshenWRT*
 figlet CPU bench
 echo -n "HT Status: "
 echo "$HTSTAT" | grep -q "HTT "
 if [ $? -eq 0 ];then
-  echo "HT Enabled"
+  echo "Enabled"
 else
-  echo "HT Disabled"
+  echo "Disabled"
 fi
 echo =====================================
 echo "1. Automatic detection of cpu cores"
