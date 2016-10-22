@@ -1,4 +1,19 @@
 #!/bin/bash
+
+function bench {
+if [ $benchchoise == 1 ]; then
+START=$(date +%s)
+echo Detected $(nproc) cores, starting benchmark testing
+make tools/install ${MAKEFLAGS="-j$(nproc)"} V=-1
+elif [ $benchchoise == 2 ]; then
+echo -n "How much u have cpu cores: "
+read cores
+START=$(date +%s)
+echo "Compilation stated on $cores cores"
+make tools/install ${MAKEFLAGS="-j$cores"} V=-1
+}
+
+
 figlet Sudokamikaze Benchmark
 echo "Sudo is needed for checking enabled HT or not."
 HTSTAT=$(sudo dmidecode -t processor)
@@ -36,16 +51,10 @@ echo "2. Manual write(numbers of cores)"
 echo =====================================
 echo -n "Choose an action: "
 read bench
-case "$bench" in
-  1) echo Detected $(nproc) cores, starting benchmark testing
-  START=$(date +%s)
-  make tools/install ${MAKEFLAGS="-j$(nproc)"} V=-1
+case "$benchchoise" in
+  1) bench
   ;;
-  2) echo -n "How much u have cpu cores: "
-  read cores
-  START=$(date +%s)
-  echo "Compilation stated on $cores cores"
-  make tools/install ${MAKEFLAGS="-j$cores"} V=-1
+  2) bench
   ;;
   *) echo "Unknown symbol"
   ;;
