@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function bench {
+cd PulshenWRT_build
 if [ $benchchoise == 1 ]; then
 START=$(date +%s)
 echo Detected $(nproc) cores, starting benchmark testing
@@ -11,6 +12,13 @@ read cores
 START=$(date +%s)
 echo "Compilation stated on $cores cores"
 make tools/install ${MAKEFLAGS="-j$cores"} V=-1
+fi
+END=$(date +%s)
+DIFF=$(( ( $END - $START)/5 *2 ))
+cd ../
+touch result.log
+echo "Your processor scored $DIFF points"
+echo "$DATEFF Your processor scored $DIFF points" >> result.log
 }
 
 
@@ -36,7 +44,7 @@ else
   echo "Error"
   exit 1
 fi
-cd PulshenWRT*
+
 figlet CPU bench
 echo -n "HT Status: "
 echo "$HTSTAT" | grep -q "HTT "
@@ -59,14 +67,7 @@ case "$benchchoise" in
   *) echo "Unknown symbol"
   ;;
 esac
-END=$(date +%s)
-DIFF=$(( ( $END - $START)/5 *2 ))
-touch result.log
-echo "Your processor scored $DIFF points"
-echo "$DATEFF Your processor scored $DIFF points" >> result.log
-notify-send --expire-time=1000 "pBench" "Your processor scored $DIFF points"
-mv result.log ../
+
 echo Cleaning buildroot
 make dirclean
 make prereq
-echo "Complete"
