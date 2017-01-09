@@ -10,7 +10,7 @@ elif [ $benchchoise == 2 ]; then
 echo -n "How much u have cpu cores: "
 read cores
 START=$(date +%s)
-echo "Compilation stated on $cores cores"
+echo "Testing stated on $cores cores"
 make tools/install ${MAKEFLAGS="-j$cores"} V=-1
 fi
 END=$(date +%s)
@@ -23,7 +23,7 @@ echo "$DATEFF Your processor scored $DIFF points" >> result.log
 
 
 figlet Sudokamikaze Benchmark
-echo "Sudo is needed for checking enabled HT or not."
+echo "Sudo is needed for checking Hyper-Threading status."
 HTSTAT=$(sudo dmidecode -t processor)
 DATEFF=$(date +%Y-%m-%d:%H:%M:%S)
 echo ===========Main Menu================
@@ -60,11 +60,10 @@ echo =====================================
 echo -n "Choose an action: "
 read bench
 case "$benchchoise" in
-  1) bench
+  1|2) bench
   ;;
-  2) bench
-  ;;
-  *) echo "Unknown symbol"
+  *) echo "ERROR"
+  exit 1
   ;;
 esac
 
