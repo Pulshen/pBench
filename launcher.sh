@@ -58,7 +58,7 @@ echo "1. Automatic detection of cpu cores"
 echo "2. Manual write(numbers of cores)"
 echo =====================================
 echo -n "Choose an action: "
-read bench
+read benchchoise
 case "$benchchoise" in
   1|2) bench
   ;;
