@@ -2,8 +2,8 @@
 
 function wrt {
   mkdir PulshenWRT_build
-  git clone git@github.com:lede-project/source.git PulshenWRT_build
-  git clone git@github.com:Sudokamikaze/PulshenWRT.git
+  git clone https://github.com/lede-project/source.git PulshenWRT_build
+  git clone https://github.com/Sudokamikaze/PulshenWRT.git
   cp PulshenWRT/configs_default/config_lede_trunk PulshenWRT_build/.config
   rm -rf PulshenWRT
   cd PulshenWRT_build
