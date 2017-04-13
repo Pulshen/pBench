@@ -4,8 +4,9 @@ function bench {
 cd PulshenWRT_build
 if [ $benchchoise == 1 ]; then
 START=$(date +%s)
-echo Detected $(nproc) cores, starting benchmark testing
-make tools/install ${MAKEFLAGS="-j$(nproc)"} V=-1
+THREAD=-j$(bc <<< $(grep -c ^processor /proc/cpuinfo)+1)
+echo Detected $THREAD cores, starting benchmark testing
+make tools/install ${MAKEFLAGS="$THREAD"} V=-1
 elif [ $benchchoise == 2 ]; then
 echo -n "How much u have cpu cores: "
 read cores
